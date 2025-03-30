@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Break Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f7f7f7;
+        }
+        #adventureBox {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spring Break Activity Generator</h1>
+    <p>Click below button to generate a Spring Break activit!</p>
+    <button id="generate">Generate Activity</button>
+    <div id="adventureBox">
+        <h2 id="destination"></h2>
+        <p id="activity"></p>
+        <p id="fact"></p>
+    </div>
+    <script>
+        const destinations = ["Hawaii", "Cancun", "Miami Beach", "Tokyo", "Bali", "Barcelona", "Sydney", "Kathmandu"];
+        const activities = ["surfing", "hiking", "snorkeling", "skiing", "sightseeing", "zip-lining", "food tour", "skydiving"];
+        const facts = [
+            "Did you know? Hawaii has its own time zone!", 
+            "Cancun was built specifically for tourism!", 
+            "Miami Beach has the largest collection of Art Deco buildings in the world!", 
+            "Tokyo has more Michelin-starred restaurants than any other city!",
+            "Bali is known as the 'Island of the Gods'!", 
+            "Barcelona's Sagrada Familia is still under construction after 140+ years!",
+            "Sydney's Opera House roof was inspired by orange slices!",
+            "In 2013, Kathmandu was ranked third among the top ten upcoming travel destinations in the world by TripAdvisor, and ranked first in Asia"
+        ];
+
+        document.getElementById("generate").addEventListener("click", function() {
+            const randomDestination = destinations[Math.floor(Math.random() * destinations.length)];
+            const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            
+            document.getElementById("destination").textContent = `Destination: ${randomDestination}`;
+            document.getElementById("activity").textContent = `Activity: Try ${randomActivity}!`;
+            document.getElementById("fact").textContent = `Random Fact: ${randomFact}`;
+        });
+    </script>
+</body>
+</html>
